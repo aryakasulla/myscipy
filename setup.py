@@ -398,8 +398,8 @@ def check_setuppy_command():
         try:
             pkgname = 'numpy'
             import numpy
-            pkgname = 'pybind11'
-            import pybind11
+            # pkgname = 'pybind11'
+            # import pybind11
         except ImportError as exc:  # We do not have our build deps installed
             print(textwrap.dedent(
                     """Error: '%s' must be installed before running the build.
@@ -500,7 +500,7 @@ def setup_package():
     # This import is here because it needs to be done before importing setup()
     # from numpy.distutils, but after the MANIFEST removing and sdist import
     # higher up in this file.
-    import setuptools
+    # import setuptools
     from setuptools import setup
 
     if run_build:

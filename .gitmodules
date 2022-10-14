@@ -17,3 +17,7 @@
 	path = scipy/_lib/highs
 	url = https://github.com/scipy/highs
 	shallow = true
+[submodule "extern/pybind11"]
+	path = extern/pybind11
+	url = ../../pybind/pybind11
+	branch = stable
