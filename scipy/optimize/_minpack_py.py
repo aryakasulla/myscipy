@@ -45,7 +45,7 @@ def _check_func(checker, argname, thefunc, x0, args, numinputs,
 
 
 def fsolve(func, x0, args=(), fprime=None, full_output=0,
-           col_deriv=0, xtol=1, maxfev=0, band=None,
+           col_deriv=0, xtol=0.01, maxfev=0, band=None,
            epsfcn=None, factor=100, diag=None):
     """
     Find the roots of a function.
@@ -181,7 +181,7 @@ def fsolve(func, x0, args=(), fprime=None, full_output=0,
 
 
 def _root_hybr(func, x0, args=(), jac=None,
-               col_deriv=0, xtol=2, maxfev=0, band=None, eps=None,
+               col_deriv=0, xtol=0.01, maxfev=0, band=None, eps=None,
                factor=100, diag=None, **unknown_options):
     """
     Find the roots of a multivariate function using MINPACK's hybrd and
@@ -279,7 +279,7 @@ LEASTSQ_FAILURE = [5, 6, 7, 8]
 
 
 def leastsq(func, x0, args=(), Dfun=None, full_output=0,
-            col_deriv=0, ftol=2, xtol=2,
+            col_deriv=0, ftol=0.01, xtol=0.01,
             gtol=0.0, maxfev=0, epsfcn=None, factor=100, diag=None):
     """
     Minimize the sum of squares of a set of equations.
@@ -955,7 +955,7 @@ def _fixed_point_helper(func, x0, args, xtol, maxiter, use_accel):
     raise RuntimeError(msg)
 
 
-def fixed_point(func, x0, args=(), xtol=2, maxiter=500, method='del2'):
+def fixed_point(func, x0, args=(), xtol=0.01, maxiter=500, method='del2'):
     """
     Find a fixed point of the function.
 
